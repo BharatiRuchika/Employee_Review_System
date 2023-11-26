@@ -1,0 +1,70 @@
+<!-- Include the modal styles -->
+<link rel="stylesheet" href="/css/modal.css" />
+
+<!-- Form for updating feedback with a specified API endpoint and onSubmit event -->
+<form action="/api/v1/review/update-feedback" method="post" onsubmit="updateFeedback(this,event)">
+
+  <!-- Hidden input field to store the review_id -->
+  <input type="hidden" name="review_id" value="<%= review.id %>">
+
+  <!-- Modal header with a title and close button -->
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="exampleModalLabel">Feedback</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+
+  <!-- Modal body containing form items for updating feedback -->
+  <div class="modal-body">
+    
+    <!-- Form item for the recipient employee -->
+    <div class="form-item">
+      <label for="for_user" class="form-label">For Employee</label>
+
+      <!-- Hidden input to store the recipient's user ID -->
+      <input type="hidden" name="for_user" value="<%= review.for_user.id %>">
+
+      <!-- Input fields displaying the recipient's name and email (read-only) -->
+      <input type="text" class="form-control" id="for_user_name" name="for_user_name"
+        value="<%= review.for_user.fullName %>" readonly required />
+      <input type="email" class="form-control" id="for_user_email" name="for_user_email"
+        value="<%= review.for_user.email %>" readonly required />
+    </div>
+
+    <!-- Form item for the sender employee -->
+    <div class="form-item">
+      <label for="from_user" class="form-label">From Employee</label>
+      
+      <!-- Hidden input to store the sender's user ID -->
+      <input type="hidden" name="from_user" value="<%= review.from_user.id %>">
+      
+      <!-- Input fields displaying the sender's name and email (read-only) -->
+      <input type="text" class="form-control" id="from_user_name" name="from_user_name"
+        value="<%= review.from_user.fullName %>" readonly required />
+      <input type="email" class="form-control" id="from_user_email" name="from_user_email"
+        value="<%= review.from_user.email %>" readonly required />
+    </div>
+  </div>
+
+  <!-- Form item for entering or displaying feedback -->
+  <div class="form-item">
+    <label for="feedback" class="form-label">Your Feedback</label>
+
+    <!-- Textarea for entering or displaying feedback, with read-only attribute for employees -->
+    <textarea placeholder="Your Feedback For the Employee" name="feedback" id="feedback" <% if (user.role=="Employee" )
+      { %>
+         readonly
+        <% } %>
+      ><%= review.feedback %></textarea>
+  </div>
+  </div>
+
+  <!-- Modal footer with close and update buttons, displayed conditionally based on the user's role -->
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      Close
+    </button>
+    <% if (user.role=="Admin" ) { %>
+      <button type="submit" class="btn btn-success">Update</button>
+      <% } %>
+  </div>
+</form>

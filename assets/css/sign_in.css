@@ -1,0 +1,63 @@
+#firstSection,#secondSection{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    height: 60vh;
+}
+
+#sign-in-container{
+    margin-top: 10vh;
+}
+
+#firstSection{
+    padding: 0px !important;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#secondSection{
+    background-image: linear-gradient(rgb(56,60,63), white);
+    color: white;
+    padding-top: 5%;
+    box-sizing: border-box;
+    height: 70vh;
+}
+
+#secondSectio h1{
+    text-align: center;
+}
+
+#firstSection img{
+    height: 100%;
+    width: 100%;
+}
+#sign-in-header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.authForm input,.authForm button{
+    width: 100%;
+    border-radius: 10px;
+    height: 40px;
+    border: none;
+    margin-bottom: 20px;
+    color: white !important;
+}
+
+.authForm input{
+    border: 2px solid white;
+    background: transparent;
+    color: white !important;
+    padding: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.authForm input::placeholder {
+    color: white !important;
+}
+
+.authForm button{
+    background-color: rgb(61,100,255);
+    color: white;
+}

@@ -1,0 +1,72 @@
+<!-- Include custom modal.css for styling the modal -->
+<link rel="stylesheet" href="/css/modal.css" />
+
+<!-- Form for updating user information -->
+<form action="/api/v1/admin/update-user" method="post">
+  
+  <!-- Hidden input to store the user ID -->
+  <input type="hidden" name="user_id" value="<%= user.id%>" />
+  
+  <!-- Modal Header -->
+  <div class="modal-header">
+    
+    <!-- Title for the edit user modal -->
+    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit User</h1>
+    
+    <!-- Close button for the modal -->
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  
+  <!-- Modal Body -->
+  <div class="modal-body">
+
+    <!-- Form input fields for editing user details -->
+    <!-- Input field for the user's name -->
+    <div class="form-item">
+      <label for="name" class="form-label">Name</label>
+
+      <input type="text" class="form-control" id="fullName" name="fullName" value="<%= user.fullName %>"
+        placeholder="<%= user.fullName %>" required />
+    </div>
+    
+    <!-- Input field for the user's email -->
+    <div class="form-item">
+      <label for="email" class="form-label">Email-Id</label>
+
+      <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>"
+        placeholder="<%= user.email %>" required />
+    </div>
+
+    <!-- Dropdown for selecting the user's role -->
+    <div class="form-item">
+      <label for="role" class="form-label">Role</label>
+
+      <select class="form-control" name="role" id="role" required>
+        
+        <!-- Option for Admin role with conditional selected attribute -->
+        <option value="Admin" <% if (user.role=="Admin" ) { %>
+          selected
+          <% } %>>Admin
+        </option>
+        
+        <!-- Option for Employee role with conditional selected attribute -->
+        <option value="Employee" <% if (user.role=="Employee" ) { %>
+          selected
+          <% } %>>Employee
+        </option>
+      </select>
+    </div>
+  </div>
+  
+  <!-- Modal Footer with buttons -->
+  <div class="modal-footer">
+    
+    <!-- Button to cancel and close the modal -->
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      Cancel
+    </button>
+    
+    <!-- Button to submit the form and update the user -->
+    <button type="submit" class="btn btn-success">Update</button>
+  </div>
+</form>

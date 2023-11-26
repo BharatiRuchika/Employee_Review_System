@@ -1,0 +1,62 @@
+<!-- Main content body -->
+<div class="main-body">
+    
+    <!-- Button to trigger modal for adding a new user -->
+    <div class="add-user">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal"
+            onclick="addUserForm(this)">
+            Add User
+        </button>
+    </div>
+
+    <!-- Table to display all users -->
+    <table class="display dataTable" id="all-users-table">
+        <thead>
+            
+            <!-- Table header with columns: Employee Name, Email Id, Role -->
+            <tr>
+                <th>Employee Name</th>
+                <th>Email Id</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <!-- Loop through each user in the 'users' array -->
+            <% users.forEach(employee=> { %>
+                
+                <!-- Table row for each user -->
+                <tr id="row-<%= employee.id %>">
+                    
+                    <!-- Column for Employee Name -->
+                    <td class="user-name">
+                        
+                        <!-- If the user is an Employee, provide a link to their details -->
+                        <% if (employee.role=='Employee' ) { %>
+                            <a href="/api/v1/users/getUser/<%=employee._id%>">
+                                <%= employee.fullName %>
+                            </a>
+                            <%}else{%>
+                                
+                                <!-- If the user is not an Employee, display their name without a link -->
+                                <%= employee.fullName %>
+                                    <%}%>
+                    </td>
+                    
+                    <!-- Column for Email Id -->
+                    <td class="user-email">
+                        <%= employee.email %>
+                    </td>
+                    
+                    <!-- Column for Role -->
+                    <td class="user-role">
+                        <%= employee.role %>
+                    </td>
+
+                </tr>
+                
+                <!-- End of loop for each user -->
+                <% }) %>
+        </tbody>
+    </table>
+</div>

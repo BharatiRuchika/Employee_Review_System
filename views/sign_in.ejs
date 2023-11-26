@@ -1,0 +1,44 @@
+<!-- Include custom sign_in.css for styling the sign-in page -->
+<link rel="stylesheet" href="/css/sign_in.css">
+
+<!-- Container for the sign-in page -->
+<div id="sign-in-container">
+
+    <!-- Two-column layout for the sign-in page -->
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+
+                <!-- First Section: Image Section -->
+                <div class="col-6 col-md-6 col-sm-6" id="firstSection">
+
+                    <!-- Image for the sign-in page -->
+                    <img src="/images/review_image.png" />
+                </div>
+
+                <!-- Second Section: Sign-In Form Section -->
+                <div class="col-6 col-md-6 col-sm-6" id="secondSection">
+
+                    <!-- Header for the sign-in section -->
+                    <div id="sign-in-header">
+                        <h1>Hello</h1>
+                        <span>We are really happy to see you again!</span>
+                    </div>
+
+                    <!-- Sign-In Form -->
+                    <form id="sign-in-form" class="authForm" action="/api/v1/auth/create-session" method="POST">
+
+                        <!-- Input field for entering email -->
+                        <input type="email" name="email" placeholder="Email" />
+
+                        <!-- Input field for entering password -->
+                        <input type="password" name="password" placeholder="Password" />
+
+                        <!-- Sign-in button -->
+                        <button type="submit">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

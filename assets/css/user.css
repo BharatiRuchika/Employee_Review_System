@@ -1,0 +1,34 @@
+#userContainer{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin-top: 70px;
+    padding: 30px;
+}
+
+#updateButtons button{
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+    margin-top: 10px;
+}
+#updateButtons i{
+    color: white;
+    padding: 10px;
+}
+#assignReviewBtn i{
+    color: black !important;
+}
+#deleteBtn{
+    background-color: red;
+    color: white;
+}
+
+#editBtn{
+    background-color: blue;
+    color: white;
+}
+
+#assignReviewBtn{
+    background-color: rgb(254,195,0);
+    color: black;
+}

@@ -1,0 +1,37 @@
+<!-- Form for deleting a user -->
+<form action="/api/v1/admin/delete-user" method="post">
+  
+  <!-- Hidden input to store the user ID -->
+  <input type="hidden" name="user_id" value="<%= user.id%>" />
+  
+  <!-- Modal Header -->
+  <div class="modal-header">
+    
+    <!-- Title for the delete confirmation modal -->
+    <h5 class="modal-title" id="deleteModalLabel">Confirmation</h5>
+    
+    <!-- Close button for the modal -->
+    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <!-- Modal Body -->
+  <div class="modal-body">
+    
+    <!-- Confirmation message to check if the user wants to delete the employee -->
+    Are you sure you want to delete employee <b>
+      <%=user.fullName %>
+    </b>?
+  </div>
+  
+  <!-- Modal Footer with buttons -->
+  <div class="modal-footer">
+    
+    <!-- Button to cancel and close the modal -->
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+    
+    <!-- Button to submit the form and delete the user -->
+    <button type="submit" class="btn btn-danger">Delete</button>
+  </div>
+</form>

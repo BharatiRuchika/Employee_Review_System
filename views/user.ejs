@@ -1,0 +1,94 @@
+<!-- Include custom user.css for styling the user page -->
+<link rel="stylesheet" href="/css/user.css">
+
+<!-- Include DataTables CSS for table styling -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+
+<!-- Container for user information -->
+<div class="container" id="userContainer">
+
+    <!-- Row for user details and actions -->
+    <div class="row">
+
+        <!-- User profile image section -->
+        <div class="col-4 offset-4">
+
+            <!-- Sub-row for user profile image -->
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- User profile image -->
+                    <img
+                        src="https://static.vecteezy.com/system/resources/thumbnails/002/387/693/small/user-profile-icon-free-vector.jpg" />
+                </div>
+            </div>
+
+            <!-- Input field for storing user ID -->
+            <input type="hidden" name="userId" value="<%=user._id %>" />
+
+            <!-- Sub-row for user name -->
+            <div class="row">
+                <div class="col-12">
+                    <!-- Display user's full name -->
+                    <h3 id="userName">
+                        <%=user.fullName %>
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Sub-row for user email -->
+            <div class="row">
+                <div class="col-12">
+                    <!-- Display user's email -->
+                    <p id="userEmail">
+                        <%=user.email %>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sub-row for user role -->
+            <div class="row">
+                <div class="col-12">
+                    <!-- Display user's role -->
+                    <p id="userRole">Role:<%=user.role %>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sub-row for update buttons (Delete, Edit, Assign Review) -->
+            <div class="row" id="updateButtons">
+
+                <!-- Delete button with onclick event -->
+                <div class="col-6">
+                    <button id="deleteBtn" data-bs-toggle="modal" data-bs-target="#modal"
+                        onclick="deleteUserForm(this,'<%- user.id %>')"> <i
+                            class="fas fa-user-times"></i>Delete</button>
+                </div>
+
+                <!-- Edit button with onclick event -->
+                <div class="col-6">
+                    <button id="editBtn" data-bs-toggle="modal" data-bs-target="#modal"
+                        onclick="editUserForm(this,'<%- user.id %>')"><i class="fas fa-user-edit"></i>Edit</button>
+                </div>
+
+                <!-- Assign Review button with onclick event -->
+                <div class="col-12">
+                    <button id="assignReviewBtn" data-bs-toggle="modal" data-bs-target="#modal"
+                        onclick="assignReviewersForm(this,'<%- user.id %>')">
+                        <i class="fa-solid fa-file"></i>Assign Review
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Include custom home.js for user-specific functionality -->
+<script src="/js/home.js"></script>
+
+<!-- Include DataTables JavaScript for table functionality -->
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+<!-- Include custom dataTable.js for additional table functionality -->
+<script src="/js/dataTable.js"></script>

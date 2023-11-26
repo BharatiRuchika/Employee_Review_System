@@ -1,0 +1,36 @@
+<!-- Include DataTables CSS from CDN -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+
+<!-- Include custom home.css for additional styling -->
+<link rel="stylesheet" href="/css/home.css" />
+
+<!-- Main container for the application -->
+<div class="container main-body">
+
+  <!-- Header section with navigation tabs -->
+  <div class="header">
+    <!-- Tab for displaying all users -->
+    <div class="heading active" onclick="showBody(this,'allUsers')">All Users</div>
+
+    <!-- Tab for displaying pending reviews -->
+    <div class="heading border-left border-right" onclick="showBody(this,'pendingReviews')">
+      Pending Reviews
+    </div>
+
+    <!-- Tab for displaying submitted reviews -->
+    <div class="heading" onclick="showBody(this,'submittedReviews')">
+      Submitted Reviews
+    </div>
+  </div>
+  <!-- Body section for each tab -->
+  <div class="home-body show" id="allUsers"><%- include('all_users') %></div>
+  <div class="home-body" id="pendingReviews"><%- include('pending-reviews') %></div>
+  <div class="home-body" id="submittedReviews"><%- include('submitted-reviews') %></div>
+</div>
+
+<!-- Include DataTables JS from CDN -->
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+<!-- Include custom JavaScript files for application functionality -->
+<script src="/js/home.js"></script>
+<script src="/js/dataTable.js"></script>

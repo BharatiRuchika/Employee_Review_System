@@ -1,0 +1,51 @@
+<!-- Include custom sign_in.css for styling the sign-up page -->
+<link rel="stylesheet" href="/css/sign_in.css">
+
+<!-- Container for the sign-up page -->
+<div id="sign-in-container">
+    <div class="row">
+        <div class="col-12">
+
+            <!-- Two-column layout for the sign-up page -->
+            <div class="row">
+
+                <!-- First Section: Image Section -->
+                <div class="col-6 col-md-6 col-sm-6" id="firstSection">
+
+                    <!-- Image for the sign-up page -->
+                    <img src="/images/review_image.png" />
+                </div>
+
+                <!-- Second Section: Sign-Up Form Section -->
+                <div class="col-6 col-md-6 col-sm-6" id="secondSection">
+
+                    <!-- Header for the sign-up section -->
+                    <div id="sign-in-header">
+                        <h1>Hello</h1>
+                        <span>We are really happy to see you again!</span>
+                    </div>
+
+                    <!-- Sign-Up Form -->
+                    <form id="sign-up-form" class="authForm" action="/api/v1/auth/create" method="POST">
+
+                        <!-- Input field for entering full name -->
+                        <input type="text" name="fullName" placeholder="Full Name" />
+
+                        <!-- Input field for entering email -->
+                        <input type="email" name="email" placeholder="Email" />
+
+                        <!-- Input field for entering password -->
+                        <input type="password" name="password" placeholder="Password" />
+
+                        <!-- Input field for confirming password -->
+                        <input type="password" name="confirmPassword" placeholder="confirmPassword" />
+
+                        <!-- Sign-up button -->
+                        <button type="submit">Sign up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

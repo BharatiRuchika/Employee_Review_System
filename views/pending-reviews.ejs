@@ -1,0 +1,45 @@
+<!-- Table for displaying pending reviews -->
+<table class="display dataTable" id="pending-reviews-table">
+ 
+  <!-- Table Header -->
+  <thead>
+    <tr>
+      
+      <!-- Column headers for Employee, Email-Id, and Add Feedback -->
+      <th>Employee</th>
+      <th>Email-Id</th>
+      <th>Add Feedback</th>
+    </tr>
+  </thead>
+  
+  <!-- Table Body -->
+  <tbody>
+    
+    <!-- Loop through each pending review in the array -->
+    <% pending_reviews.forEach(review=> { %>
+      
+      <!-- Table Row for each pending review -->
+      <tr id="row-<%= review.for_user.id %>">
+        
+        <!-- Display the full name of the employee being reviewed -->
+        <td class="user-fullName">
+          <%= review.for_user.fullName %>
+        </td>
+        
+        <!-- Display the email of the employee being reviewed -->
+        <td class="user-email">
+          <%= review.for_user.email %>
+        </td>
+        
+        <!-- Column for adding feedback, represented by an edit icon -->
+        <td>
+          
+          <!-- Edit icon with onclick event to open the feedback form -->
+          <i class="fas fa-edit" style="color: #1255ca" data-bs-toggle="modal" data-bs-target="#modal"
+            onclick="openFeedbackForm(this,'<%- review.id %>')"></i>
+        </td>
+      </tr>
+
+      <% }) %>
+  </tbody>
+</table>

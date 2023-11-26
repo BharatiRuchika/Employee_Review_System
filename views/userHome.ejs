@@ -1,0 +1,45 @@
+<!-- Include DataTables CSS for table styling -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+
+<!-- Include custom home.css for styling the home page -->
+<link rel="stylesheet" href="/css/home.css" />
+
+<!-- Include custom userHome.css for additional styling specific to user home -->
+<link rel="stylesheet" href="/css/userHome.css" />
+
+<!-- Container for the main content of the page -->
+<div class="container main-body">
+
+  <!-- Header section with navigation headings -->
+  <div class="header">
+
+    <!-- Heading for Pending Reviews with an onclick event -->
+    <div class="heading active border-left border-right" onclick="showBody(this,'pendingReviews')">
+      Pending Reviews
+    </div>
+
+    <!-- Heading for Submitted Reviews with an onclick event -->
+    <div class="heading" onclick="showBody(this,'submittedReviews')">
+      Submitted Reviews
+    </div>
+  </div>
+
+  <!-- Body section for Pending Reviews -->
+  <div class="home-body" id="pendingReviews">
+    <!-- Include content from 'pending-reviews' file using EJS -->
+    <%- include('pending-reviews') %>
+  </div>
+
+  <!-- Body section for Submitted Reviews -->
+  <div class="home-body" id="submittedReviews">
+    <!-- Include content from 'submitted-reviews' file using EJS -->
+    <%- include('submitted-reviews') %>
+  </div>
+</div>
+
+<!-- Include DataTables JavaScript for table functionality -->
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<!-- Include custom home.js for page-specific functionality -->
+<script src="/js/home.js"></script>
+<!-- Include custom dataTable.js for additional table functionality -->
+<script src="/js/dataTable.js"></script>

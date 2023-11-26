@@ -1,0 +1,73 @@
+<!-- Include custom modal.css for styling the modal -->
+<link rel="stylesheet" href="/css/modal.css" />
+
+<!-- Form for updating feedback -->
+<form action="/api/v1/review/update-feedback" method="post" onsubmit="updateFeedback(this,event)">
+  
+  <!-- Hidden input to store the review ID -->
+  <input type="hidden" name="review_id" value="<%= review.id %>">
+  
+  <!-- Modal Header -->
+  <div class="modal-header">
+    
+    <!-- Title for the submit feedback modal -->
+    <h1 class="modal-title fs-5" id="exampleModalLabel">Submit Feedback</h1>
+    
+    <!-- Close button for the modal -->
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  
+  <!-- Modal Body -->
+  <div class="modal-body">
+    <div class="form-item">
+      <!-- Form input fields for updating feedback -->
+
+      <!-- Input fields for the employee being reviewed -->
+      <label for="for_user" class="form-label">For Employee</label>
+      <input type="hidden" name="for_user" value="<%= review.for_user.id %>" />
+      
+      <!-- Input field for the employee's name -->
+      <input type="text" class="form-control" id="for_user_name" name="for_user_name"
+        value="<%= review.for_user.fullName %>" readonly required />
+
+      <!-- Input field for the employee's email  -->
+      <input type="email" class="form-control" id="for_user_email" name="for_user_email"
+        value="<%= review.for_user.email %>" readonly required />
+    </div>
+
+    <!-- Input fields for the employee giving feedback -->
+    <div class="form-item">
+      <label for="for_user" class="form-label">From Employee</label>
+
+      <!-- Hidden input for the employee ID -->
+      <input type="hidden" name="from_user" value="<%= review.from_user.id %>" />
+      
+      <!-- Input field for the employee's name  -->
+      <input type="text" class="form-control" id="from_user_name" name="from_user_name"
+        value="<%= review.from_user.fullName %>" readonly required />
+      
+        <!-- Input field for the employee's email  -->
+      <input type="email" class="form-control" id="from_user_email" name="from_user_email"
+        value="<%= review.from_user.email %>" readonly required />
+    </div>
+  </div>
+  
+  <!-- Input field for entering feedback -->
+  <div class="form-item">
+    <label for="feedback" class="form-label">Your Feedback</label>
+    <textarea placeholder="Your Feedback For the Employee" name="feedback" id="feedback" required></textarea>
+  </div>
+  </div>
+  
+  <!-- Modal Footer with buttons -->
+  <div class="modal-footer">
+    
+    <!-- Button to cancel and close the modal -->
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      Cancel
+    </button>
+    
+    <!-- Button to submit the form and update the feedback -->
+    <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+</form>

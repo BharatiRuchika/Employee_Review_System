@@ -1,0 +1,68 @@
+#header{
+    min-height: 20vh;
+    background-color: rgb(225,173,158);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#auth-buttons button{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#ERS_logo{
+    height: 50%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+    #profile-image{
+         width: 100%; 
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+    #profile-image{
+         width: 50%; 
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 2000px) {
+    #profile-image{
+         width: 50%;
+    }
+}
+  
+
+@media screen and (min-width: 300px) and (max-width: 500px) {
+    #profile-image{
+         width: 50%; 
+    }
+}
+
+
+@media screen and (min-width: 100px) and (max-width: 299px) {
+    #profile-image{
+        width: 100%;
+    }
+}
+
+#profile-image{ 
+    border-radius: 50%;
+}
+
+#header-profile button{
+    background: none;
+    border: none;
+}
+
+#profileDetails img{
+    width: 100%;
+}
+
+

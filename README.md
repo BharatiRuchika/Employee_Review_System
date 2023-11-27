@@ -4,8 +4,8 @@ This is an Employee Review System project made using Nodejs, Expressjs in backen
 admin can change the role of employee from employee to admin. admin can assign reviewers to an employee.
 
 ### Admin credentials
-+ emailId: admin@gmail.com
-+ password: admin123
++emailId: admin@gmail.com
++password: admin123
 
 ### Host Link
 https://employee-review-system-yf30.onrender.com/

@@ -12,14 +12,14 @@ https://employee-review-system-yf30.onrender.com/
 
 ### Features
   1. Create account with your details
-Admin:
+  + Admin:
   1. View list of all the employee.
   2. Add a new employee.
   3. Update data of any employee ( Name, email, Role ).
   4. See review given to an employee.
   5. Assign task to any employee ( review task : Giving review to other employee )
   6. Delete any employee.
-Employee:
+ + Employee:
   1. Give his review for other employee as assigned by admin.
   2. see his submitted as well as pending reviews
 
